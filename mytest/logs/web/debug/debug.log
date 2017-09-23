@@ -1,0 +1,120 @@
+2017-09-23 11:39:15 {main} INFO  test.App - [StartupInfoLogger.java:48] Starting App on dahuatech-34049 with PID 432 (D:\mygit\mytest\target\classes started by dahuatec34049 in D:\mygit\mytest)
+2017-09-23 11:39:15 {main} DEBUG test.App - [StartupInfoLogger.java:51] Running with Spring Boot v1.5.1.RELEASE, Spring v4.3.6.RELEASE
+2017-09-23 11:39:15 {main} INFO  test.App - [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2017-09-23 11:39:16 {background-preinit} DEBUG org.jboss.logging - [LoggerProviders.java:160] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2017-09-23 11:39:19 {main} WARN  o.s.b.a.t.AbstractTemplateResolverConfiguration - [AbstractTemplateResolverConfiguration.java:60] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2017-09-23 11:39:19 {main} WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - [AbstractApplicationContext.java:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Tomcat.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.tomcat.jdbc.pool.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Cannot determine embedded database driver class for database type NONE. If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+2017-09-23 11:39:19 {main} ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - [LoggingFailureAnalysisReporter.java:42] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database driver class for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2017-09-23 11:40:18 {main} INFO  test.App - [StartupInfoLogger.java:48] Starting App on dahuatech-34049 with PID 3960 (D:\mygit\mytest\target\classes started by dahuatec34049 in D:\mygit\mytest)
+2017-09-23 11:40:18 {main} DEBUG test.App - [StartupInfoLogger.java:51] Running with Spring Boot v1.5.1.RELEASE, Spring v4.3.6.RELEASE
+2017-09-23 11:40:18 {main} INFO  test.App - [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2017-09-23 11:40:18 {background-preinit} DEBUG org.jboss.logging - [LoggerProviders.java:160] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2017-09-23 11:40:21 {main} WARN  o.s.b.a.t.AbstractTemplateResolverConfiguration - [AbstractTemplateResolverConfiguration.java:60] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2017-09-23 11:40:21 {main} WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - [AbstractApplicationContext.java:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Tomcat.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.tomcat.jdbc.pool.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Cannot determine embedded database driver class for database type NONE. If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+2017-09-23 11:40:21 {main} ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - [LoggingFailureAnalysisReporter.java:42] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database driver class for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2017-09-23 11:40:34 {main} INFO  test.App - [StartupInfoLogger.java:48] Starting App on dahuatech-34049 with PID 2616 (D:\mygit\mytest\target\classes started by dahuatec34049 in D:\mygit\mytest)
+2017-09-23 11:40:34 {main} DEBUG test.App - [StartupInfoLogger.java:51] Running with Spring Boot v1.5.1.RELEASE, Spring v4.3.6.RELEASE
+2017-09-23 11:40:34 {main} INFO  test.App - [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2017-09-23 11:40:34 {background-preinit} DEBUG org.jboss.logging - [LoggerProviders.java:160] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2017-09-23 11:40:37 {main} WARN  o.s.b.a.t.AbstractTemplateResolverConfiguration - [AbstractTemplateResolverConfiguration.java:60] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2017-09-23 11:40:37 {main} WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - [AbstractApplicationContext.java:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Tomcat.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.tomcat.jdbc.pool.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Cannot determine embedded database driver class for database type NONE. If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+2017-09-23 11:40:37 {main} ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - [LoggingFailureAnalysisReporter.java:42] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database driver class for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2017-09-23 11:43:08 {main} INFO  test.App - [StartupInfoLogger.java:48] Starting App on dahuatech-34049 with PID 5312 (D:\mygit\mytest\target\classes started by dahuatec34049 in D:\mygit\mytest)
+2017-09-23 11:43:08 {main} DEBUG test.App - [StartupInfoLogger.java:51] Running with Spring Boot v1.5.1.RELEASE, Spring v4.3.6.RELEASE
+2017-09-23 11:43:08 {main} INFO  test.App - [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2017-09-23 11:43:08 {background-preinit} DEBUG org.jboss.logging - [LoggerProviders.java:160] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2017-09-23 11:43:11 {main} WARN  o.s.b.a.t.AbstractTemplateResolverConfiguration - [AbstractTemplateResolverConfiguration.java:60] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2017-09-23 11:43:11 {main} WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - [AbstractApplicationContext.java:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Tomcat.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.tomcat.jdbc.pool.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Cannot determine embedded database driver class for database type NONE. If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+2017-09-23 11:43:11 {main} ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - [LoggingFailureAnalysisReporter.java:42] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database driver class for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2017-09-23 11:46:35 {main} INFO  test.App - [StartupInfoLogger.java:48] Starting App on dahuatech-34049 with PID 1748 (D:\mygit\mytest\target\classes started by dahuatec34049 in D:\mygit\mytest)
+2017-09-23 11:46:35 {main} DEBUG test.App - [StartupInfoLogger.java:51] Running with Spring Boot v1.5.1.RELEASE, Spring v4.3.6.RELEASE
+2017-09-23 11:46:35 {main} INFO  test.App - [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2017-09-23 11:46:36 {background-preinit} DEBUG org.jboss.logging - [LoggerProviders.java:160] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2017-09-23 11:46:38 {main} WARN  o.s.b.a.t.AbstractTemplateResolverConfiguration - [AbstractTemplateResolverConfiguration.java:60] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2017-09-23 11:46:39 {main} WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - [AbstractApplicationContext.java:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Tomcat.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.tomcat.jdbc.pool.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Cannot determine embedded database driver class for database type NONE. If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+2017-09-23 11:46:39 {main} ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - [LoggingFailureAnalysisReporter.java:42] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database driver class for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
+2017-09-23 11:47:22 {main} INFO  test.App - [StartupInfoLogger.java:48] Starting App on dahuatech-34049 with PID 2468 (D:\mygit\mytest\target\classes started by dahuatec34049 in D:\mygit\mytest)
+2017-09-23 11:47:22 {main} DEBUG test.App - [StartupInfoLogger.java:51] Running with Spring Boot v1.5.1.RELEASE, Spring v4.3.6.RELEASE
+2017-09-23 11:47:22 {main} INFO  test.App - [SpringApplication.java:637] No active profile set, falling back to default profiles: default
+2017-09-23 11:47:23 {background-preinit} DEBUG org.jboss.logging - [LoggerProviders.java:160] Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2017-09-23 11:47:25 {main} WARN  o.s.b.a.t.AbstractTemplateResolverConfiguration - [AbstractTemplateResolverConfiguration.java:60] Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2017-09-23 11:47:26 {main} WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - [AbstractApplicationContext.java:550] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Tomcat.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.tomcat.jdbc.pool.DataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Cannot determine embedded database driver class for database type NONE. If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+2017-09-23 11:47:26 {main} ERROR o.s.b.diagnostics.LoggingFailureAnalysisReporter - [LoggingFailureAnalysisReporter.java:42] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Cannot determine embedded database driver class for database type NONE
+
+Action:
+
+If you want an embedded database please put a supported one on the classpath. If you have database settings to be loaded from a particular profile you may need to active it (no profiles are currently active).
+
