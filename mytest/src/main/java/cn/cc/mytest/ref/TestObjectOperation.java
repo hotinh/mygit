@@ -9,6 +9,7 @@ public class TestObjectOperation {
 
        public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, ClassNotFoundException,
                   IllegalArgumentException, NoSuchMethodException, InvocationTargetException {
+    	   
             User p1 = new User( "张三" , 12);
             System. out.println(p1);
             System. out.println();
@@ -35,6 +36,8 @@ public class TestObjectOperation {
             System. out.println( "--------调用类成员方方法----------" );
             t.mf4( "reflection.User" , "showTotal" , null, null);
 //          t.mf4("reflection.User", "ttt", null, null);
+            
+            
 
       }
 
