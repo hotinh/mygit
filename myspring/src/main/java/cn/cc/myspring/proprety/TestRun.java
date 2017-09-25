@@ -17,7 +17,7 @@ public class TestRun {
 	@Scheduled(fixedDelay=1000)
 	public void run() {
 		System.out.println(homeProperties.toString());
-//		System.out.println(userProperties.toString());
+		System.out.println(userProperties.toString());
 	}
 	
 }
