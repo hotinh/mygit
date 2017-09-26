@@ -12,7 +12,7 @@ import com.example.demomybatis.domain.City;
 @Mapper
 public interface CityMapper {
 
-	@Select("select * from city where state = #{state}")
+	@Select("select * from city_demo where state = #{state}")
 	City findByState(@Param("state") String state);
 
 }
