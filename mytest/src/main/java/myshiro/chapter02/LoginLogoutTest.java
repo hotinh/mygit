@@ -21,7 +21,7 @@ public class LoginLogoutTest {
 		SecurityManager securityManager = factory.getInstance();
 		SecurityUtils.setSecurityManager(securityManager);
 		Subject subject = SecurityUtils.getSubject();
-		UsernamePasswordToken token = new UsernamePasswordToken("zhang","1231");
+		UsernamePasswordToken token = new UsernamePasswordToken("zhang","123");
 		try {
 			subject.login(token);
 		} catch (AuthenticationException e) {
