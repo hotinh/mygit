@@ -14,7 +14,7 @@ public class LoginLogoutTest {
 
 	@Test
 	public void testHelloWorld() {
-		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:auth.ini");
 		SecurityManager securityManager = factory.getInstance();
 		SecurityUtils.setSecurityManager(securityManager);
 		Subject subject = SecurityUtils.getSubject();
@@ -30,11 +30,11 @@ public class LoginLogoutTest {
 	
 	@Test
 	public void testCustomRealm() {
-		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro-realm.ini");
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:auth-realm.ini");
 		SecurityManager securityManager = factory.getInstance();
 		SecurityUtils.setSecurityManager(securityManager);
 		Subject subject = SecurityUtils.getSubject();
-		UsernamePasswordToken token = new UsernamePasswordToken("zhang", "1231");
+		UsernamePasswordToken token = new UsernamePasswordToken("zhang", "123");
 		try {
             subject.login(token);
         } catch (AuthenticationException e) {
@@ -43,5 +43,37 @@ public class LoginLogoutTest {
 		Assert.assertEquals(true, subject.isAuthenticated()); //断言用户已经登录
         //6、退出
         subject.logout();
+	}
+	
+	@Test
+	public void testCustomMultiRealm() {
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:auth-multi-realm.ini");
+		SecurityManager securityManager = factory.getInstance();
+		SecurityUtils.setSecurityManager(securityManager);
+		Subject subject = SecurityUtils.getSubject();
+		UsernamePasswordToken token = new UsernamePasswordToken("wang","123");
+		try {
+            subject.login(token);
+        } catch (AuthenticationException e) {
+            e.printStackTrace();
+        }
+		Assert.assertEquals(true, subject.isAuthenticated()); //断言用户已经登录
+		subject.logout();
+	}
+	
+	@Test
+	public void testJDBCRealm() {
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:auth-jdbc-realm.ini");
+		SecurityManager securityManager = factory.getInstance();
+		SecurityUtils.setSecurityManager(securityManager);
+		Subject subject = SecurityUtils.getSubject();
+		UsernamePasswordToken token = new UsernamePasswordToken("zhang","123");
+		try {
+            subject.login(token);
+        } catch (AuthenticationException e) {
+            e.printStackTrace();
+        }
+		Assert.assertEquals(true, subject.isAuthenticated()); //断言用户已经登录
+		subject.logout();
 	}
 }

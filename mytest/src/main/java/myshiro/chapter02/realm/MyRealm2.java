@@ -9,11 +9,11 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.realm.Realm;
 
-public class MyRealm1 implements Realm {
+public class MyRealm2 implements Realm {
 
 	@Override
 	public String getName() {
-		return "myrealm1";
+		return "myrealm2";
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public class MyRealm1 implements Realm {
 	public AuthenticationInfo getAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		String username = (String) token.getPrincipal();
 		String password = new String((char[])token.getCredentials());
-		if(!"zhang".equals(username)) {
+		if(!"wang".equals(username)) {
 			throw new UnknownAccountException();
 		}
 		if(!"123".equals(password)) {
