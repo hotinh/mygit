@@ -17,11 +17,11 @@ public class LoginLogoutTest {
 
 	@Test
 	public void testHelloWorld() {
-		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:auth.ini");
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:myshiro/auth.ini");
 		SecurityManager securityManager = factory.getInstance();
 		SecurityUtils.setSecurityManager(securityManager);
 		Subject subject = SecurityUtils.getSubject();
-		UsernamePasswordToken token = new UsernamePasswordToken("zhang","123");
+		UsernamePasswordToken token = new UsernamePasswordToken("zhang","1231");
 		try {
 			subject.login(token);
 		} catch (AuthenticationException e) {
@@ -33,7 +33,7 @@ public class LoginLogoutTest {
 	
 	@Test
 	public void testCustomRealm() {
-		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:auth-realm.ini");
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:myshiro/auth-realm.ini");
 		SecurityManager securityManager = factory.getInstance();
 		SecurityUtils.setSecurityManager(securityManager);
 		Subject subject = SecurityUtils.getSubject();

@@ -18,11 +18,11 @@ public class AuthenticatorTest {
 	
 	@Test
 	public void testAllSuccessfulStrategyWithSuccess() {
-		login("classpath:auth-authenticator-all-success.ini");
+		login("classpath:myshiro/auth-authenticator-all-success.ini");
 		Subject subject = SecurityUtils.getSubject();
 		
 		PrincipalCollection principalCollection = subject.getPrincipals();
-		principalCollection.asList().stream().forEach(System.out :: println);
+//		principalCollection.asList().stream().forEach(System.out :: println);
 		Assert.assertEquals(2, principalCollection.asList().size());
 	}
 	
@@ -38,7 +38,7 @@ public class AuthenticatorTest {
 
         //得到一个身份集合，其包含了Realm验证成功的身份信息
         PrincipalCollection principalCollection = subject.getPrincipals();
-        principalCollection.asList().stream().forEach(System.out :: println);
+//        principalCollection.asList().stream().forEach(System.out :: println);
         Assert.assertEquals(2, principalCollection.asList().size());
     }
 
