@@ -50,7 +50,7 @@ public class LoginLogoutTest {
 	
 	@Test
 	public void testCustomMultiRealm() {
-		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:auth-multi-realm.ini");
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:myshiro/auth-multi-realm.ini");
 		SecurityManager securityManager = factory.getInstance();
 		SecurityUtils.setSecurityManager(securityManager);
 		Subject subject = SecurityUtils.getSubject();
@@ -66,7 +66,7 @@ public class LoginLogoutTest {
 	
 	@Test
 	public void testJDBCRealm() {
-		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:auth-jdbc-realm.ini");
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:myshiro/auth-jdbc-realm.ini");
 		SecurityManager securityManager = factory.getInstance();
 		SecurityUtils.setSecurityManager(securityManager);
 		Subject subject = SecurityUtils.getSubject();
