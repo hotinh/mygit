@@ -31,7 +31,7 @@ public class MyRealm2 implements Realm {
 		if(!"123".equals(password)) {
 			throw new IncorrectCredentialsException();
 		}
-		return new SimpleAuthenticationInfo(username, password, getName());
+		return new SimpleAuthenticationInfo(username+"@qq.com", password, getName());
 	}
 
 }
