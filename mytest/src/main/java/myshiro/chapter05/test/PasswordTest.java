@@ -20,12 +20,12 @@ public class PasswordTest extends BaseTest {
 
     @Test
     public void testPasswordServiceWithMyRealm() {
-        login("classpath:myshiro/auth-passwordservice.ini", "wu", "123");
+        login("classpath:myshiro/auth-05-passwordservice.ini", "wu", "123");
     }
 
     @Test
     public void testPasswordServiceWithJdbcRealm() {
-        login("classpath:myshiro/auth-jdbc-passwordservice.ini", "wu", "123");
+        login("classpath:myshiro/auth-05-jdbc-passwordservice.ini", "wu", "123");
     }
 
     @Test
@@ -46,7 +46,7 @@ public class PasswordTest extends BaseTest {
     @Test
     public void testHashedCredentialsMatcherWithMyRealm2() {
         //使用testGeneratePassword生成的散列密码
-        login("classpath:shiro-hashedCredentialsMatcher.ini", "liu", "123");
+        login("classpath:myshiro/auth-05-hashedCredentialsMatcher.ini", "liu", "123");
     }
 
     @Test
@@ -80,7 +80,7 @@ public class PasswordTest extends BaseTest {
     public void testRetryLimitHashedCredentialsMatcherWithMyRealm() {
         for(int i = 1; i <= 5; i++) {
             try {
-                login("classpath:shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
+                login("classpath:myshiro/auth-05-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
             } catch (Exception e) {/*ignore*/}
         }
         login("classpath:shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
