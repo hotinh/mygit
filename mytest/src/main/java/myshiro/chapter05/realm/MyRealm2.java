@@ -1,4 +1,4 @@
-package myshiro.chapter05.myrealm;
+package myshiro.chapter05.realm;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
