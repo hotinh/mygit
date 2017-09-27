@@ -1,4 +1,4 @@
-package myshiro.chapter03;
+package myshiro.chapter03.test;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;

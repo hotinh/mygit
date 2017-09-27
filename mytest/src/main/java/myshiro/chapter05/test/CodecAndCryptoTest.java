@@ -1,4 +1,4 @@
-package myshiro.chapter05;
+package myshiro.chapter05.test;
 
 import org.junit.Assert;
 import org.apache.shiro.codec.Base64;

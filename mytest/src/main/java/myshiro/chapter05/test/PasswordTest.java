@@ -1,4 +1,4 @@
-package myshiro.chapter05;
+package myshiro.chapter05.test;
 
 import org.apache.commons.beanutils.BeanUtilsBean;
 import org.apache.commons.beanutils.ConvertUtilsBean2;

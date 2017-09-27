@@ -1,4 +1,4 @@
-package myshiro.chapter03;
+package myshiro.chapter03.test;
 
 import org.junit.Assert;
 import org.apache.shiro.authz.UnauthorizedException;
