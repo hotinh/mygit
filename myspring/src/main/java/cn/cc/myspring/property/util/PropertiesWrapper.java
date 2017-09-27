@@ -1,4 +1,4 @@
-package cn.cc.myspring.proprety.util;
+package cn.cc.myspring.property.util;
 
 import java.util.Properties;
 

@@ -1,4 +1,4 @@
-package cn.cc.myspring.proprety.util;
+package cn.cc.myspring.property.util;
 
 import org.apache.commons.lang3.StringUtils;
 

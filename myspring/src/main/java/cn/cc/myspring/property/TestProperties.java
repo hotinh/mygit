@@ -1,4 +1,4 @@
-package cn.cc.myspring.proprety;
+package cn.cc.myspring.property;
 
 import java.io.IOException;
 import java.util.*;

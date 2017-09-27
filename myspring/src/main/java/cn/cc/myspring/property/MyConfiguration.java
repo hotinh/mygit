@@ -1,9 +1,9 @@
-package cn.cc.myspring.proprety;
+package cn.cc.myspring.property;
 
-import cn.cc.myspring.proprety.util.MyConfig;
-import cn.cc.myspring.proprety.util.MyKey;
-import cn.cc.myspring.proprety.util.PropertiesLoader;
-import cn.cc.myspring.proprety.util.PropertiesWrapper;
+import cn.cc.myspring.property.util.MyConfig;
+import cn.cc.myspring.property.util.MyKey;
+import cn.cc.myspring.property.util.PropertiesLoader;
+import cn.cc.myspring.property.util.PropertiesWrapper;
 
 @MyConfig("application.properties")
 public class MyConfiguration {

@@ -1,4 +1,4 @@
-package cn.cc.myspring.proprety;
+package cn.cc.myspring.property;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
