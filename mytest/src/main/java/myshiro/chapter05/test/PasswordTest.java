@@ -83,7 +83,7 @@ public class PasswordTest extends BaseTest {
                 login("classpath:myshiro/auth-05-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
             } catch (Exception e) {/*ignore*/}
         }
-        login("classpath:shiro-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
+        login("classpath:myshiro/auth-05-retryLimitHashedCredentialsMatcher.ini", "liu", "234");
     }
 }
 

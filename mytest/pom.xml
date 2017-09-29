@@ -68,12 +68,6 @@
 	    </exclusions>
 	</dependency>
     
-    <dependency>  
-        <groupId>org.apache.shiro</groupId>  
-        <artifactId>shiro-core</artifactId>  
-        <version>1.2.2</version>  
-    </dependency> 
-  
 	<dependency>
 	    <groupId>org.javatuples</groupId>
 	    <artifactId>javatuples</artifactId>
@@ -131,6 +125,17 @@
         <groupId>net.sf.ehcache</groupId>
         <artifactId>ehcache-core</artifactId>
         <version>2.6.6</version>
+    </dependency> 
+    
+    <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-core</artifactId>
+        <version>1.2.2</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-ehcache</artifactId>
+        <version>1.2.2</version>
     </dependency>
     
   </dependencies>
