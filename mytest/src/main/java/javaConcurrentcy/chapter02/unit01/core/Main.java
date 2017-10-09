@@ -5,6 +5,7 @@ import javaConcurrentcy.chapter02.unit01.task.Bank;
 import javaConcurrentcy.chapter02.unit01.task.Company;
 
 public class Main {
+	
     public static void main(String[] args) {
         // 创建一个帐户对象
         Account account = new Account();
