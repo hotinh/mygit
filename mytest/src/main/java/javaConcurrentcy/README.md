@@ -56,9 +56,23 @@ Semaphore semaphore
 ReentrantLock();
 ```
 #chapter03-unit04-等待多个并发事件的完成
+```
+CountDownLatch
+```
 #chapter03-unit05-在集合点的同步
+```
+CyclicBarrier
+```
 #chapter03-unit06-并发阶段任务的运行
+```
+Phaser
+```
 #chapter03-unit07-并发阶段任务中的阶段切换
+```
+MyPhaser extends Phaser {
+
+}
+```
 #chapter03-unit08-并发任务间的数据交换
 
 #chapter04-unit02-创建线程执行器
