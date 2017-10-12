@@ -64,7 +64,9 @@ public class Buffer {
 			System.out.printf("%s: Inserted Line: %d\n", 
 					Thread.currentThread().getName(), 
 					this.buffer.size());
+			
 			this.lines.signalAll();
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} finally {
@@ -85,6 +87,7 @@ public class Buffer {
 				System.out.printf("%s: Line Readed: %d\n"
 						,Thread.currentThread().getName()
 						,this.buffer.size());
+				
 				this.space.signalAll();
 			}
 		} catch (InterruptedException e) {
