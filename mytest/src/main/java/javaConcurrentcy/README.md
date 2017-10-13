@@ -74,6 +74,9 @@ MyPhaser extends Phaser {
 }
 ```
 #chapter03-unit08-并发任务间的数据交换
+```
+Exchanger
+```
 
 #chapter04-unit02-创建线程执行器
 #chapter04-unit03-创建固定大小的线程执行器
