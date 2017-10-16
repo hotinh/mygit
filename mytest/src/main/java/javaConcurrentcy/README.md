@@ -79,10 +79,27 @@ Exchanger
 ```
 
 #chapter04-unit02-创建线程执行器
+```
+ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
+```
 #chapter04-unit03-创建固定大小的线程执行器
+```
+ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
+```
 #chapter04-unit04-在执行器中执行任务并返回结果
+```
+public class FactorialCalculator implements Callable<Integer> {}
+ThreadPoolExecutor executor ...
+Future<Integer> result = executor.submit(calculator);
+```
 #chapter04-unit05-运行多个任务并且处理第一个结果
+```
+executor.invokeAny(tasks);
+```
 #chapter04-unit06-运行多个任务并且处理所有结果
+```
+results = executor.invokeAll(tasks);
+```
 #chapter04-unit07-在执行器中延时执行任务
 #chapter04-unit08-在执行器中周期性执行任务
 #chapter04-unit09-在执行器中取消任务
