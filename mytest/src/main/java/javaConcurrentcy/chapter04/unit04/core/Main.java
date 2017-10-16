@@ -14,7 +14,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// 创建固定大小的线程池执行器，最多可以同时执行2个线程。
-		ThreadPoolExecutor executor= (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
+		ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
 		
 		// 创建一个存储未来象的列表，未来对象关联着任务的任务的执行，并且可以获取执行的结果
 		List<Future<Integer>> resultList = new ArrayList<>();
