@@ -1,11 +1,31 @@
 #chapter01-unit02-线程的创建和运行
+```
+public class Calculator implements Runnable {
+ ...
+}
+```
 #chapter01-unit03-线程信息的获取和设置
 #chapter01-unit04-线程的中断
+```
+task.interrupt(); 
+```
 #chapter01-unit05-线程中断的控制
+```
+throws InterruptedException
+```
 #chapter01-unit06-线程的休眠和恢复
 #chapter01-unit07-等待线程的终止
 #chapter01-unit08-守护线程的创建和运行
 #chapter01-unit09-线程中不可控异常的处理
+```
+public class ExceptionHandler implements Thread.UncaughtExceptionHandler {
+ @Override
+ public void uncaughtException(Thread t, Throwable e) {
+  ...
+ }
+}
+thread.setUncaughtExceptionHandler(new ExceptionHandler());
+```
 #chapter01-unit10-线程布局变量的使用
 #chapter01-unit11-线程分组
 #chapter01-unit12-线程组中不可控制异常的处理
@@ -101,11 +121,33 @@ executor.invokeAny(tasks);
 results = executor.invokeAll(tasks);
 ```
 #chapter04-unit07-在执行器中延时执行任务
+```
+executor.schedule(task, i+1, TimeUnit.SECONDS);
+executor.awaitTermination(1, TimeUnit.DAYS);
+```
 #chapter04-unit08-在执行器中周期性执行任务
+```
+ScheduledFuture<?> result = executor.scheduleAtFixedRate(task, 1, 2, TimeUnit.SECONDS);
+System.out.printf("Main: Delay: %d\n", result.getDelay(TimeUnit.MILLISECONDS));
+```
 #chapter04-unit09-在执行器中取消任务
+```
+Future<String> result = executor.submit(task);
+result.cancel(true);
+```
 #chapter04-unit10-在执行器中控制任务的完成
+```
+!resultTask.isCancelled()
+```
 #chapter04-unit11-在执行器中分离任务的启动与结果的处理
+```
+CompletionService
+```
 #chapter04-unit12-处理在执行器中被拒绝的任务
+```
+ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
+executor.setRejectedExecutionHandler(controller);
+```
 
 #chapter05-unit02-创建Fork-Join线程池
 #chapter05-unit03-合并任务的结果
