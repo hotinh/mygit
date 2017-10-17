@@ -157,6 +157,9 @@ ForkJoinPool pool = new ForkJoinPool();
 public class Task extends RecursiveAction {}
 ```
 #chapter05-unit03-合并任务的结果
+```
+RecursiveTask
+```
 #chapter05-unit04-异步运行任务
 #chapter05-unit05-在任务中抛出异常
 #chapter05-unit06-取消任务
