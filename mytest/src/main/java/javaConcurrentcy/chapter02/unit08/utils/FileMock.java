@@ -1,5 +1,8 @@
 package javaConcurrentcy.chapter02.unit08.utils;
 
+/**
+ * 文件模拟类，
+ */
 public class FileMock {
 
 	/**

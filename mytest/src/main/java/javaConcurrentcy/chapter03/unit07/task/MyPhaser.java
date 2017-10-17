@@ -2,6 +2,9 @@ package javaConcurrentcy.chapter03.unit07.task;
 
 import java.util.concurrent.Phaser;
 
+/**
+ * 线程阶段类，控制线程阶段的改变
+ */
 public class MyPhaser extends Phaser {
 
 	/**

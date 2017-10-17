@@ -2,6 +2,7 @@ package javaConcurrentcy.chapter01.unit05.task;
 
 import java.io.File;
 
+//文件搜索类，给定一个文件目录，搜索其中指定的文件
 public class FileSearch implements Runnable {
 	
 	/**

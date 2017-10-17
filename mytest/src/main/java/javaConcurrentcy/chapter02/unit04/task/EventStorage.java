@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-
 /**
  * 事件存储类，生产者会存储事件，消费者会处理存储的事件，一个事件就是一个日期对象
  */

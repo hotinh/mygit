@@ -90,7 +90,9 @@ Phaser
 #chapter03-unit07-并发阶段任务中的阶段切换
 ```
 MyPhaser extends Phaser {
-
+ protected boolean onAdvance(int phase, int registeredParties) {
+  ...
+ }
 }
 ```
 #chapter03-unit08-并发任务间的数据交换
@@ -150,6 +152,10 @@ executor.setRejectedExecutionHandler(controller);
 ```
 
 #chapter05-unit02-创建Fork-Join线程池
+```
+ForkJoinPool pool = new ForkJoinPool();
+public class Task extends RecursiveAction {}
+```
 #chapter05-unit03-合并任务的结果
 #chapter05-unit04-异步运行任务
 #chapter05-unit05-在任务中抛出异常

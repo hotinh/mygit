@@ -1,7 +1,7 @@
 package javaConcurrentcy.chapter01.unit02.task;
 
+//创建一个名为Calculator的类，它实现了 Runnable接口
 public class Calculator implements Runnable {
-	
 	// 声明一个名为number的私有 private int 属性
 	private int number;
 	
@@ -17,5 +17,4 @@ public class Calculator implements Runnable {
 			System.out.printf("%s: %d * %d = %d\n", Thread.currentThread().getName(), number, i, number*i);
 		}
 	}
-
 }

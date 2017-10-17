@@ -1,7 +1,6 @@
 package javaConcurrentcy.chapter01.unit03.task;
 
 public class Calculator implements Runnable {
-	
 	// 声明一个名为number的私有 private int 属性
 	private int number;
 	
