@@ -194,6 +194,7 @@ AtomicLong
 ```
 #chapter06-unit09-使用原子数组
 ```
+AtomicIntegerArray
 ```
 
 #chapter07-unit02-定制ThreadPoolExecutor类

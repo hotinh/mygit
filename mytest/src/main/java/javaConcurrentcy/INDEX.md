@@ -33,6 +33,7 @@ DelayQueue
 ConcurrentSkipListMap
 ThreadLocalRandom
 AtomicLong
+AtomicIntegerArray
 ```
 #chapter07
 ```
