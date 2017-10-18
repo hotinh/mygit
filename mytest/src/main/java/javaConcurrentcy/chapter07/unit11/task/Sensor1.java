@@ -20,6 +20,8 @@ public class Sensor1 implements Runnable {
 
     /**
      * 主方法，进行停车场场景模拟
+     * in-7;out-3
+     * out-6
      */
     @Override
     public void run() {

@@ -5,7 +5,6 @@ package javaConcurrentcy.chapter07.unit10.task;
  */
 public class Consumer implements Runnable {
 
-
     private MyPriorityTransferQueue<Event> buffer;
 
     public Consumer(MyPriorityTransferQueue<Event> buffer) {
