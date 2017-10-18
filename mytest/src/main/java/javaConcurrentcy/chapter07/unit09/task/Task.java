@@ -1,30 +1,43 @@
 package javaConcurrentcy.chapter07.unit09.task;
 
-import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
- * 任务类，执行任务
+ * 自定义任务类
  */
 public class Task implements Runnable {
-    /**
-     * 任务的名称
-     */
-    private String name;
-
-    /**
-     * 构造函数，初始化任务名称
+	// 使用自定义锁对象
+	private MyLock lock;
+	
+	// 任务名称
+	private String name;
+	
+	/**
+     * 构造函数
      *
      * @param name 任务名称
+     * @param lock 使用的锁
      */
-    public Task(String name) {
-        this.name = name;
-    }
+	public Task(String name, MyLock lock) {
+		this.lock = lock;
+		this.name = name;
+	}
 
-    /**
-     * 核心方法，向控制台输出当前执行的时间
+	/**
+     * 主方法，运行两秒种（其实就是休眠）
      */
-    @Override
-    public void run() {
-        System.out.printf("%s: Executed at: %s\n",name,new Date());
-    }
+	@Override
+	public void run() {
+		lock.lock();
+		System.out.printf("Task: Take the lock\n", name);
+		try {
+			TimeUnit.SECONDS.sleep(2);
+			System.out.printf("Task: %s: Free the lock\n", name);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			lock.unlock();
+		}
+	}
+	
 }
