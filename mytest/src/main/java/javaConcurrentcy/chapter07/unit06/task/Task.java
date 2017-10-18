@@ -1,30 +1,23 @@
 package javaConcurrentcy.chapter07.unit06.task;
 
-import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
- * 任务类，执行任务
+ * 自定义任务类
  */
 public class Task implements Runnable {
-    /**
-     * 任务的名称
-     */
-    private String name;
 
-    /**
-     * 构造函数，初始化任务名称
-     *
-     * @param name 任务名称
-     */
-    public Task(String name) {
-        this.name = name;
-    }
-
-    /**
-     * 核心方法，向控制台输出当前执行的时间
-     */
-    @Override
-    public void run() {
-        System.out.printf("%s: Executed at: %s\n",name,new Date());
-    }
+	/**
+	 * 主方法，运行两秒钟
+	 */
+	@Override
+	public void run() {
+		System.out.printf("Task: Begin.\n");
+		try {
+			TimeUnit.SECONDS.sleep(2);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.printf("Task: End.\n");
+	}
 }

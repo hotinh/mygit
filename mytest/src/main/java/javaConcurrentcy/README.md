@@ -211,6 +211,8 @@ AtomicIntegerArray
 ```
 #chapter07-unit06-定制运行在线程池中的任务
 ```
+public class MyScheduledTask<V> extends FutureTask<V> implements RunnableScheduledFuture<V> {}
+public class MyScheduledThreadPoolExecutor extends ScheduledThreadPoolExecutor {}
 ```
 #chapter07-unit07-通过实现ThreadFactory接口为Fork-Join框架
 ```
