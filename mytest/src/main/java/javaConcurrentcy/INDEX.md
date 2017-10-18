@@ -26,6 +26,13 @@ Fork-Join
 ```
 #chapter06
 ```
+ConcurrentLinkedDeque
+LinkedBlockingDeque
+PriorityBlockingQueue
+DelayQueue
+ConcurrentSkipListMap
+ThreadLocalRandom
+AtomicLong
 ```
 #chapter07
 ```
