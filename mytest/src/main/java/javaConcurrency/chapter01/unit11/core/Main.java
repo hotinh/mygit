@@ -6,7 +6,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) {
-
         // 创建一个线程组
         ThreadGroup threadGroup = new ThreadGroup("Searcher");
         // 创建一个结果对象
@@ -22,7 +21,6 @@ public class Main {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
         }
 
         // 输出线程组的信息
@@ -41,7 +39,6 @@ public class Main {
 
         // 中断线程组中的所有线程
         threadGroup.interrupt();
-
     }
 
     /**
