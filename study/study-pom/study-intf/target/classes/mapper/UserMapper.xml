@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.study.intf.lyncc.mapper.UserMapper">
+
+ 	<resultMap type="User" id="userInfo">
+	     <id property="id" column="id"/>
+		 <result property="username" column="username"/>
+		 <result property="mail" column="mail"/>
+		 <result property="age" column="age"/>
+		 <result property="password" column="password"/>
+	</resultMap>
+	
+	<select id="findAllUser" resultMap="userInfo">
+	  select * from user
+	</select>
+	
+	<select id="findByPage" resultMap="userInfo">
+	     select * from user limit #{offset},#{limit}
+	</select>
+	
+	<select id="countAll" resultType="Integer">
+	  select count(*) from user
+	</select>
+	 
+</mapper>
