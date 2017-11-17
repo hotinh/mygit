@@ -5,8 +5,12 @@ import java.util.Vector;
 
 public class ArrayListMultiThread {
 
+	// 并发会有问题
 //	static ArrayList<Integer> a1 = new ArrayList<>();
+	
+	// Vector 可解决
 	static Vector<Integer> a1 = new Vector<>();
+	
 	public static class AddThread implements Runnable {
 		@Override
 		public void run() {
