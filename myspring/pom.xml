@@ -25,6 +25,25 @@
 
   <dependencies>
   
+  <dependency>  
+    <groupId>com.fasterxml.jackson.dataformat</groupId>  
+    <artifactId>jackson-dataformat-xml</artifactId>  
+    <version>2.5.3</version>  
+</dependency>  
+  
+<dependency>  
+    <groupId>org.codehaus.jackson</groupId>  
+    <artifactId>jackson-mapper-asl</artifactId>  
+    <version>1.9.13</version>  
+</dependency>  
+
+    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.3</version>
+</dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
@@ -35,6 +54,16 @@
 		<artifactId>spring-boot-starter-test</artifactId>
 		<scope>test</scope>
 	</dependency>
+	
+<!-- https://mvnrepository.com/artifact/com.github.stefanbirkner/system-rules -->
+<dependency>
+    <groupId>com.github.stefanbirkner</groupId>
+    <artifactId>system-rules</artifactId>
+    <version>1.2.0</version>
+    <scope>test</scope>
+</dependency>
+
+	
 	
 	<!-- Junit -->
     <dependency>
