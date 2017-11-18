@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>cn.cc.example</groupId>
+  <artifactId>spring4ia</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <modules>
+    <module>s4ia-ch01-knight</module>
+    <module>s4ia-ch05</module>
+    <module>s4ia-ch06-thymeleaf</module>
+  </modules>
+  
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.1.RELEASE</version>
+  </parent>
+  
+  <properties>
+      <java.version>1.8</java.version>
+      <spring.boot.version>1.5.1.RELEASE</spring.boot.version>
+      <mybatis.version>3.4.0</mybatis.version>
+      <mybatis.spring.version>1.3.0</mybatis.spring.version>
+      <redis.version>2.9.0</redis.version>
+      <guava.version>21.0</guava.version>
+      <mysql.version>5.1.38</mysql.version>
+      <commons.lang3.version>3.6</commons.lang3.version>
+      <commons.httpclient.version>4.5.2</commons.httpclient.version>
+      <fastjson.version>1.2.29</fastjson.version>
+      <servlet.version>3.1.0</servlet.version>
+      <gson.version>2.7</gson.version>
+      <jackson.version>2.8.3</jackson.version>
+      <druid.version>1.0.26</druid.version>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+      
+      <slf4j.version>1.7.24</slf4j.version>
+      <logback.version>1.1.7</logback.version>
+      <common.logging.version>1.2</common.logging.version>
+  </properties>
+  
+  <dependencies>
+  
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
+    
+    <dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-lang3</artifactId>
+	    <version>${commons.lang3.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-classic</artifactId>
+	    <version>${logback.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>commons-logging</groupId>
+	    <artifactId>commons-logging</artifactId>
+	    <version>${common.logging.version}</version>
+	</dependency>
+	
+  </dependencies>
+  
+</project>
