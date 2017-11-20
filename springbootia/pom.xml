@@ -26,6 +26,7 @@
   <modules>
     <module>sbia-ch01</module>
     <module>sbia-ch02</module>
+    <module>sbia-ch03</module>
   </modules>
   
   <dependencies>
