@@ -26,7 +26,6 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * RestTemplate配置
- * @author Administrator
  *
  */
 @Configuration
