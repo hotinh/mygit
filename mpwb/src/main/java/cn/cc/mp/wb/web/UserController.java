@@ -4,6 +4,8 @@ import cn.cc.mp.wb.core.Result;
 import cn.cc.mp.wb.core.ResultGenerator;
 import cn.cc.mp.wb.model.User;
 import cn.cc.mp.wb.service.UserService;
+import tk.mybatis.mapper.entity.Condition;
+
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
@@ -52,11 +54,14 @@ public class UserController {
         return ResultGenerator.genSuccessResult(pageInfo);
     }
     
-    /*@GetMapping("/condition")
-    public Result condition(@RequestBody User user) {
+    @PostMapping("/condition")
+    public Result condition(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size, @RequestBody User user) {
         PageHelper.startPage(page, size);
-        List<User> list = userService.findAll();
+        Condition condition = new Condition(User.class);
+        condition.createCriteria().andCondition("username like '%" + user.getUsername() + "%'");
+        condition.setOrderByClause("username desc");
+        List<User> list = userService.findByCondition(condition);
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
-    }*/
+    }
 }
