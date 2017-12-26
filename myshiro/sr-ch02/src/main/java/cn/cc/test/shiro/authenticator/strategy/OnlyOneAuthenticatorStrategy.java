@@ -1,4 +1,4 @@
-package cn.cc.text.shiro.authenticator.strategy;
+package cn.cc.test.shiro.authenticator.strategy;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;

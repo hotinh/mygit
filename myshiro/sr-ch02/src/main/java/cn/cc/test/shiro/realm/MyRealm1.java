@@ -1,4 +1,4 @@
-package cn.cc.text.shiro.realm;
+package cn.cc.test.shiro.realm;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;

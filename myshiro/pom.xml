@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
   <modelVersion>4.0.0</modelVersion>
-  <groupId>cn.cc.text</groupId>
+  <groupId>cn.cc.test</groupId>
   <artifactId>myshiro</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
+  
   <modules>
     <module>sr-ch02</module>
+    <module>sr-ch03</module>
+    <module>sr-ch04</module>
+    <module>sr-ch05</module>
+    <module>sr-ch06</module>
+    <module>sr-ch07</module>
+    <module>sr-ch08</module>
+    <module>sr-ch09</module>
+    <module>sr-ch10</module>
+    <module>sr-ch11</module>
+    <module>sr-ch12</module>
+    <module>sr-ch13</module>
+    <module>sr-ch14</module>
+    <module>sr-ch15</module>
+    <module>sr-ch16</module>
+    <module>sr-ch17</module>
+    <module>sr-ch18</module>
+    <module>sr-ch19</module>
+    <module>sr-ch20</module>
+    <module>sr-ch21</module>
+    <module>sr-ch22</module>
+    <module>sr-ch24</module>
+    <module>sr-ch23</module>
   </modules>
+  
 </project>

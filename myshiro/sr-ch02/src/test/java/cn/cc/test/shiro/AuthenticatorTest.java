@@ -1,4 +1,4 @@
-package cn.cc.text.shiro;
+package cn.cc.test.shiro;
 
 import org.apache.shiro.config.IniSecurityManagerFactory;
 import org.apache.shiro.mgt.SecurityManager;
@@ -18,7 +18,7 @@ public class AuthenticatorTest {
 	
 	@Test
 	public void testAllSuccessfulStrategyWithSuccess() {
-		login("classpath:myshiro/auth-02-authenticator-all-success.ini");
+		login("classpath:shiro-authenticator-all-success.ini");
 		Subject subject = SecurityUtils.getSubject();
 		
 		PrincipalCollection principalCollection = subject.getPrincipals();
@@ -33,7 +33,7 @@ public class AuthenticatorTest {
 	
 	@Test
     public void testAtLeastOneSuccessfulStrategyWithSuccess() {
-        login("classpath:auth-authenticator-atLeastOne-success.ini");
+        login("classpath:shiro-authenticator-atLeastOne-success.ini");
         Subject subject = SecurityUtils.getSubject();
 
         //得到一个身份集合，其包含了Realm验证成功的身份信息

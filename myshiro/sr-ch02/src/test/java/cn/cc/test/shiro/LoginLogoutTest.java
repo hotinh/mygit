@@ -1,4 +1,4 @@
-package cn.cc.text.shiro;
+package cn.cc.test.shiro;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -33,7 +33,7 @@ public class LoginLogoutTest {
 	
 	@Test
 	public void testCustomRealm() {
-		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:myshiro/auth-realm.ini");
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro-realm.ini");
 		SecurityManager securityManager = factory.getInstance();
 		SecurityUtils.setSecurityManager(securityManager);
 		Subject subject = SecurityUtils.getSubject();
@@ -50,7 +50,7 @@ public class LoginLogoutTest {
 	
 	@Test
 	public void testCustomMultiRealm() {
-		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:myshiro/auth-multi-realm.ini");
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro-multi-realm.ini");
 		SecurityManager securityManager = factory.getInstance();
 		SecurityUtils.setSecurityManager(securityManager);
 		Subject subject = SecurityUtils.getSubject();
@@ -66,7 +66,7 @@ public class LoginLogoutTest {
 	
 	@Test
 	public void testJDBCRealm() {
-		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:myshiro/auth-jdbc-realm.ini");
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro-jdbc-realm.ini");
 		SecurityManager securityManager = factory.getInstance();
 		SecurityUtils.setSecurityManager(securityManager);
 		Subject subject = SecurityUtils.getSubject();
