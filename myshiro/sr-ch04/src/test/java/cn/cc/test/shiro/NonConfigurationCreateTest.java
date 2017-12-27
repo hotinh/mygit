@@ -44,7 +44,7 @@ public class NonConfigurationCreateTest {
         ds.setDriverClassName("com.mysql.jdbc.Driver");
         ds.setUrl("jdbc:mysql://localhost:3306/shiro");
         ds.setUsername("root");
-        ds.setPassword("");
+        ds.setPassword("123456");
 
         JdbcRealm jdbcRealm = new JdbcRealm();
         jdbcRealm.setDataSource(ds);
