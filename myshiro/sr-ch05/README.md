@@ -36,7 +36,7 @@ public class MyRealm extends AuthorizingRealm {
 #密码重试次数限制
 >如在1个小时内密码最多重试5次，如果尝试次数超过5次就锁定1小时，1小时后可再次重试，如果还是重试失败，可以锁定如1天，以此类推，防止密码被暴力破解。我们通过继承HashedCredentialsMatcher，且使用Ehcache记录重试次数和超时时间。
 
-````
+```
 public boolean doCredentialsMatch(AuthenticationToken token, AuthenticationInfo info) {  
        String username = (String)token.getPrincipal();  
         //retry count + 1  
@@ -58,4 +58,5 @@ public boolean doCredentialsMatch(AuthenticationToken token, AuthenticationInfo 
         }  
         return matches;  
 }
+```
 
