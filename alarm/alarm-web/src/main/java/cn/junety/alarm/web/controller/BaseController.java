@@ -7,7 +7,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.lang.reflect.InvocationTargetException;
+
 import javax.servlet.http.HttpServletRequest;
+import org.apache.commons.beanutils.BeanUtils;
 
 /**
  * Created by caijt on 2017/4/2.
@@ -30,4 +33,16 @@ public class BaseController {
         String identification = userLoginStatusService.getIdentificationFromLoginStatus(request);
         return userService.getUserByIdentification(identification);
     }
+    
+    protected User initUser() {
+        User user = new User();
+        try {
+            BeanUtils.setProperty(user, "id", 1);
+            BeanUtils.setProperty(user, "type", 1);
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            logger.error("error:{}", e);
+        }
+        return user;
+    }
+    
 }

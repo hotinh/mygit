@@ -19,4 +19,8 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     @Resource
     private UserMapper userMapper;
 
+    public String saveOne(User user) {
+        userMapper.insertSelective(user);
+        return user.getId().toString();
+    }
 }

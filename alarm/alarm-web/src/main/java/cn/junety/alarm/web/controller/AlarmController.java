@@ -6,7 +6,6 @@ import cn.junety.alarm.web.service.AlarmService;
 import cn.junety.alarm.web.service.GroupService;
 import cn.junety.alarm.web.service.ModuleService;
 import cn.junety.alarm.web.service.ProjectService;
-import cn.junety.alarm.web.syslog.Log;
 import cn.junety.alarm.web.vo.AlarmSearch;
 import cn.junety.alarm.web.vo.AlarmVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,20 +31,15 @@ public class AlarmController extends BaseController {
     
     @Autowired
     private GroupService groupService;
+    
     @Autowired
     private ModuleService moduleService;
     
-    private User initUser() {
-    	User user = new User();
-		user.setId(1);
-		user.setType(1);
-    	return user;
-    }
-
-    @RequestMapping(value = "/alarms", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    
+    //@RequestMapping(value = "/alarms", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/alarms", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getAlarmList(HttpServletRequest request) {
         User currentUser = getUser(request);
-        
         currentUser = initUser();
         
         try {
@@ -55,7 +49,7 @@ public class AlarmController extends BaseController {
             List<AlarmVO> alarmList = alarmService.getAlarmInfo(currentUser, alarmSearch);
             int alarmCount = alarmService.getAlarmInfoCount(currentUser, alarmSearch);
 
-            return ResponseHelper.buildResponse(2000, "alarm_list", alarmList, "alarm_count", alarmCount);
+            return ResponseHelper.buildResponseNoCode("alarm_list", alarmList, "alarm_count", alarmCount);
         } catch (Exception e) {
             logger.error("get alarm list error, caused by", e);
             return ResponseHelper.buildResponse(5000, "alarm_list", Collections.emptyList(), "alarm_count", 0);
@@ -65,7 +59,6 @@ public class AlarmController extends BaseController {
     @RequestMapping(value = "/alarms/{aid}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public String getAlarmById(HttpServletRequest request, @PathVariable Integer aid) {
         User currentUser = getUser(request);
-        
         currentUser = initUser();
         
         logger.info("GET /alarms/{}, current_user:{}", aid, currentUser);
@@ -82,7 +75,6 @@ public class AlarmController extends BaseController {
     @RequestMapping(value = "/alarms", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public String createAlarm(HttpServletRequest request, @RequestBody Alarm alarm) {
         User currentUser = getUser(request);
-        
         currentUser = initUser();
         
         logger.info("POST /alarms, current_user:{}, alarm:{}", currentUser, alarm);
@@ -99,7 +91,6 @@ public class AlarmController extends BaseController {
     @RequestMapping(value = "/alarms", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public String updateAlarm(HttpServletRequest request, @RequestBody Alarm alarm) {
         User currentUser = getUser(request);
-        
         currentUser = initUser();
         
         logger.info("PUT /alarms, current_user:{}, alarm:{}", currentUser, alarm);
@@ -116,7 +107,6 @@ public class AlarmController extends BaseController {
     @RequestMapping(value = "/alarms/{aid}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public String deleteAlarm(HttpServletRequest request, @PathVariable Integer aid) {
         User currentUser = getUser(request);
-        
         currentUser = initUser();
         
         logger.info("DELETE /alarms/{}, current_user:{}", aid, currentUser);

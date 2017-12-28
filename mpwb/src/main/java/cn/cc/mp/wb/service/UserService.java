@@ -8,4 +8,5 @@ import cn.cc.mp.wb.core.Service;
  */
 public interface UserService extends Service<User> {
 
+    String saveOne(User user);
 }

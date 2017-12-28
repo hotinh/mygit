@@ -3,6 +3,8 @@ package cn.cc.mp.wb.model;
 import java.util.Date;
 import javax.persistence.*;
 
+import com.alibaba.fastjson.JSON;
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -102,5 +104,10 @@ public class User {
      */
     public void setRegisterDate(Date registerDate) {
         this.registerDate = registerDate;
+    }
+
+    @Override
+    public String toString() {
+        return JSON.toJSONString(this);
     }
 }

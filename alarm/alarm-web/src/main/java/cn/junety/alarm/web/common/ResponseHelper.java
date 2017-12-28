@@ -23,5 +23,13 @@ public class ResponseHelper {
         logger.info("response code:{}", code);
         return JSON.toJSONString(params);
     }
+    
+    public static String buildResponseNoCode(Object... vars) {
+        Map<String, Object> params = new HashMap<>();
+        for(int i = 0; i < vars.length; i+=2) {
+            params.put(vars[i].toString(), vars[i+1]);
+        }
+        return JSON.toJSONString(params);
+    }
 
 }
