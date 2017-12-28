@@ -1,4 +1,4 @@
-package myutils.myguava.string;
+package myutils.guava.string;
 
 import java.util.Arrays;
 import com.google.common.base.Joiner;

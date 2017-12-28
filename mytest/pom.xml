@@ -57,8 +57,20 @@
 	    <artifactId>jackson-mapper-asl</artifactId>  
 	    <version>1.9.13</version>  
 	</dependency>
+	
+	<!--阿里 FastJson依赖-->
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.2.39</version>
+    </dependency>
     
     <!--常用库依赖-->
+    <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>23.0</version>
+    </dependency>
     <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-email</artifactId>
@@ -73,21 +85,19 @@
         <groupId>commons-codec</groupId>
         <artifactId>commons-codec</artifactId>
     </dependency>
-    <dependency>
-        <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
-        <version>23.0</version>
+	<dependency>
+	    <groupId>commons-beanutils</groupId>
+	    <artifactId>commons-beanutils</artifactId>
+	    <version>1.9.3</version>
+	</dependency>
+	<dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
     </dependency>
     <dependency>
         <groupId>org.apache.httpcomponents</groupId>
         <artifactId>httpclient</artifactId>
-        <version>4.5.3</version>
     </dependency>
-    <dependency>
-	    <groupId>commons-collections</groupId>
-	    <artifactId>commons-collections</artifactId>
-	    <version>3.2.1</version>
-	</dependency>
     <dependency>
         <groupId>org.javatuples</groupId>
         <artifactId>javatuples</artifactId>

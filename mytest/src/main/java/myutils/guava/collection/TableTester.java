@@ -1,4 +1,4 @@
-package myutils.myguava.collection;
+package myutils.guava.collection;
 
 import java.util.Map;
 import java.util.Set;
