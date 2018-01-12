@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 
-public class Tesfdfd extends Tester {
+public class CacheTester extends Tester {
 
     @Resource
     private DictMapper dictMapper;

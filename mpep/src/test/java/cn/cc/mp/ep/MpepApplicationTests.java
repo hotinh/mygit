@@ -1,4 +1,4 @@
-package cn.cc.mp.wb;
+package cn.cc.mp.ep;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MpWbApplicationTests {
+public class MpepApplicationTests {
 
 	@Test
 	public void contextLoads() {

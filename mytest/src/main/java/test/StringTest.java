@@ -11,6 +11,9 @@ public class StringTest {
 		
 		System.out.println(String.format("%1$7s %3$2s %2$2s %1$2s", "a", "b", "c", "d"));
 		
+		String ss = "incrementRefireCount";
+
+		System.out.println(ss.startsWith("get"));
 	}
 
 }

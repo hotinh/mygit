@@ -1,11 +1,27 @@
 package cn.cc.mp.wb.configurer;
 
 import java.nio.charset.Charset;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 import org.apache.http.Header;
 import org.apache.http.client.HttpClient;
+import org.apache.http.config.Registry;
+import org.apache.http.config.RegistryBuilder;
+import org.apache.http.conn.socket.ConnectionSocketFactory;
+import org.apache.http.conn.socket.PlainConnectionSocketFactory;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.impl.client.DefaultConnectionKeepAliveStrategy;
 import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -30,8 +46,10 @@ import org.springframework.web.client.RestTemplate;
  */
 @Configuration
 public class RestTemplateConfigurer {
-    
     static Logger logger = LoggerFactory.getLogger(RestTemplateConfigurer.class);
+    
+    private static final String HTTP = "http";
+    private static final String HTTPS = "https";
     
     /**
      * 总连接数
@@ -64,8 +82,8 @@ public class RestTemplateConfigurer {
         
         // 添加内容转换器
         List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
-        messageConverters.add(new StringHttpMessageConverter(Charset.forName("UTF-8")));
-        messageConverters.add(new FormHttpMessageConverter());
+//        messageConverters.add(new StringHttpMessageConverter(Charset.forName("UTF-8")));
+//        messageConverters.add(new FormHttpMessageConverter());
 //        messageConverters.add(new MappingJackson2XmlHttpMessageConverter());
 //        messageConverters.add(new MappingJackson2HttpMessageConverter());
  
@@ -92,18 +110,21 @@ public class RestTemplateConfigurer {
     
     @Bean
     public HttpClient httpClient() {
-        HttpClientBuilder httpClientBuilder = HttpClients.custom();
-        
         /* 连接池配置 */
-        PoolingHttpClientConnectionManager poolingHttpClientConnectionManager = new PoolingHttpClientConnectionManager();
+        PoolingHttpClientConnectionManager poolingHttpClientConnectionManager = 
+                new PoolingHttpClientConnectionManager(socketFactoryRegistry(), null, null, null, 30, TimeUnit.SECONDS);
         poolingHttpClientConnectionManager.setMaxTotal(MAX_TOTAL);
         poolingHttpClientConnectionManager.setDefaultMaxPerRoute(MAX_PER_ROUTE);
         
+        HttpClientBuilder httpClientBuilder = HttpClients.custom();
+        
         httpClientBuilder.setConnectionManager(poolingHttpClientConnectionManager);
+        
         // 重试次数，默认是3次，没有开启
         httpClientBuilder.setRetryHandler(new DefaultHttpRequestRetryHandler(2,true));
         // 保持长连接配置，需要在头添加Keep-Alive
         httpClientBuilder.setKeepAliveStrategy(new DefaultConnectionKeepAliveStrategy());
+        
         
         /*底层是配置RequestConfig*/
 //      RequestConfig.Builder builder = RequestConfig.custom();
@@ -120,6 +141,42 @@ public class RestTemplateConfigurer {
         headers.add(new BasicHeader("Connection", "Keep-Alive"));
         
         return httpClientBuilder.build();
+    }
+    
+    @Bean
+    public Registry<ConnectionSocketFactory> socketFactoryRegistry() {
+        Registry<ConnectionSocketFactory> registry = RegistryBuilder.<ConnectionSocketFactory>create()
+                .register(HTTP, PlainConnectionSocketFactory.INSTANCE)
+                .register(HTTPS, new SSLConnectionSocketFactory(createIgnoreVerifySSL(), NoopHostnameVerifier.INSTANCE))
+                .build();
+        return registry;
+    }
+    
+    @Bean
+    public SSLContext createIgnoreVerifySSL() {
+        // 实现一个X509TrustManager接口，用于绕过验证，不用修改里面的方法  
+        X509TrustManager trustManager = new X509TrustManager() {
+            @Override
+            public void checkClientTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {
+            }
+
+            @Override
+            public void checkServerTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {
+            }
+            @Override
+            public X509Certificate[] getAcceptedIssuers() {
+                return null;
+            }
+        }; 
+        
+        SSLContext sslContext = null;
+        try {
+            sslContext = new SSLContextBuilder().build();
+            sslContext.init(null, new TrustManager[] { trustManager }, null);  
+        } catch (KeyManagementException | NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return sslContext;  
     }
     
 }

@@ -187,7 +187,6 @@ public class CodeGenerator {
         } catch (Exception e) {
             throw new RuntimeException("生成Controller失败", e);
         }
-
     }
 
     private static freemarker.template.Configuration getConfiguration() throws IOException {

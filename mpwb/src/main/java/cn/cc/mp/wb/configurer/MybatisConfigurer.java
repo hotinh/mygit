@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import tk.mybatis.spring.mapper.MapperScannerConfigurer;
@@ -26,7 +27,7 @@ import static cn.cc.mp.wb.core.ProjectConstant.*;
 public class MybatisConfigurer {
 
     @Bean
-    public SqlSessionFactory sqlSessionFactoryBean(DataSource dataSource) throws Exception {
+    public static SqlSessionFactory sqlSessionFactoryBean(DataSource dataSource) throws Exception {
         SqlSessionFactoryBean factory = new SqlSessionFactoryBean();
         factory.setDataSource(dataSource);
         factory.setTypeAliasesPackage(MODEL_PACKAGE);
@@ -45,11 +46,12 @@ public class MybatisConfigurer {
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         factory.setMapperLocations(resolver.getResources("classpath:mapper/*.xml"));
+        factory.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
         return factory.getObject();
     }
 
     @Bean
-    public MapperScannerConfigurer mapperScannerConfigurer() {
+    public static MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactoryBean");
         mapperScannerConfigurer.setBasePackage(MAPPER_PACKAGE);
