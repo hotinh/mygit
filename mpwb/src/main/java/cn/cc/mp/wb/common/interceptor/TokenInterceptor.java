@@ -1,4 +1,4 @@
-package cn.cc.mp.wb.configurer;
+package cn.cc.mp.wb.common.interceptor;
 
 import java.util.ArrayList;
 import java.util.Collections;

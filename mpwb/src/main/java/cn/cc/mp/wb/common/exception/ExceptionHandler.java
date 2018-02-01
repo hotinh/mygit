@@ -1,4 +1,4 @@
-package cn.cc.mp.wb.configurer;
+package cn.cc.mp.wb.common.exception;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

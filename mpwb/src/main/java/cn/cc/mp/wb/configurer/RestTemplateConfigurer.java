@@ -34,11 +34,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.http.converter.ByteArrayHttpMessageConverter;
 import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
+
+import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 
 /**
  * RestTemplate配置
@@ -82,10 +85,12 @@ public class RestTemplateConfigurer {
         
         // 添加内容转换器
         List<HttpMessageConverter<?>> messageConverters = new ArrayList<>();
-//        messageConverters.add(new StringHttpMessageConverter(Charset.forName("UTF-8")));
-//        messageConverters.add(new FormHttpMessageConverter());
+        messageConverters.add(new ByteArrayHttpMessageConverter());
+        messageConverters.add(new StringHttpMessageConverter(Charset.forName("UTF-8")));
+        messageConverters.add(new FormHttpMessageConverter());
 //        messageConverters.add(new MappingJackson2XmlHttpMessageConverter());
 //        messageConverters.add(new MappingJackson2HttpMessageConverter());
+        messageConverters.add(new FastJsonHttpMessageConverter());
  
         restTemplate = new RestTemplate(messageConverters);
         restTemplate.setRequestFactory(clientFactory());

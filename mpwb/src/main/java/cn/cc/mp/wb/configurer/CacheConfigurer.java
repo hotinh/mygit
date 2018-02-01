@@ -17,8 +17,8 @@ import cn.cc.mp.wb.dao.UserMapper;
 import cn.cc.mp.wb.model.Dict;
 import cn.cc.mp.wb.model.User;
 
-@Configuration
-@EnableCaching
+//@Configuration
+//@EnableCaching
 public class CacheConfigurer {
     
     @Resource
