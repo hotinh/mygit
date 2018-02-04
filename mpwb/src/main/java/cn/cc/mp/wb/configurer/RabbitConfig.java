@@ -1,4 +1,4 @@
-package cn.cc.mp.wb.configurer;
+/*package cn.cc.mp.wb.configurer;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -38,3 +38,4 @@ public class RabbitConfig {
         return BindingBuilder.bind(queue2()).to(topicExchange()).with("key.#");
     }
 }
+*/

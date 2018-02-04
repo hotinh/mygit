@@ -1,4 +1,4 @@
-package cn.cc.mp.wb.web;
+/*package cn.cc.mp.wb.web;
 
 import java.util.Date;
 import java.util.List;
@@ -39,3 +39,4 @@ public class SenderController {
         return ResultGenerator.genSuccessResult();
     }
 }
+*/

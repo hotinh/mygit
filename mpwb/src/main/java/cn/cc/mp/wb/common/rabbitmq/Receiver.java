@@ -1,4 +1,4 @@
-package cn.cc.mp.wb.common.rabbitmq;
+/*package cn.cc.mp.wb.common.rabbitmq;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import com.rabbitmq.client.Channel;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Receiver {
     
     @RabbitListener(queues = "hello.queue1")
@@ -29,3 +29,4 @@ public class Receiver {
         channel.basicAck(message.getMessageProperties().getDeliveryTag(),true);
     }
 }
+*/

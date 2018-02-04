@@ -1,5 +1,15 @@
+*/logs/
+
+### eclipse ###
 .settings/
 .classpath
 .project
 */target/
-*/logs/
+
+
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr

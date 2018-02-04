@@ -16,6 +16,8 @@ import org.quartz.SchedulerException;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.TriggerKey;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +32,7 @@ import cn.cc.mp.wb.core.ResultGenerator;
 @RequestMapping("/quartz")
 @RestController
 public class QuartzController {
+    Logger logger = LoggerFactory.getLogger(QuartzController.class);
     
     @Autowired
     SchedulerFactoryBean schedulerFactoryBean;
@@ -42,10 +45,11 @@ public class QuartzController {
     }
     
     @GetMapping("/start")
-    public Result start(@RequestParam String fd) throws SchedulerException {
+    public Result start(@RequestParam String userId) throws SchedulerException {
+        logger.info("----");
         
         Map<String, Object> m = new HashMap<>();
-        m.put("fd", fd);
+        m.put("userId", userId);
         
         JobDataMap jobDataMap = new JobDataMap();
         jobDataMap.put("jobArg", "world");
@@ -54,7 +58,7 @@ public class QuartzController {
         JobDetail jobDetail = JobBuilder.newJob(DemoJob.class)
                 .setJobData(jobDataMap)
 //                .withDescription("demo")
-                .withIdentity("demo-job")
+                .withIdentity("demo-job"+"-"+userId)
 //                .withIdentity("demo-job", "demo-group")
                 .build();
 
@@ -63,8 +67,8 @@ public class QuartzController {
                 .startNow()
 //                .withSchedule(cronSchedule("0/5 * * * * ?"))
                 .withSchedule(simpleSchedule()
-                        .withIntervalInSeconds(5)
-                        .repeatForever()
+//                        .withIntervalInSeconds(5)
+//                        .repeatForever()
                         )
                 .build();
         
@@ -93,9 +97,23 @@ public class QuartzController {
     }
     
     @GetMapping("/resume")
-    public Result resume() throws SchedulerException {
+    public Result resume(@RequestParam String userId) throws SchedulerException {
 //        scheduler.resumeJob(JobKey.jobKey("demo-job", "demo-group"));
-        scheduler.resumeJob(JobKey.jobKey("demo-job"));
+        
+        Map<String, Object> m = new HashMap<>();
+        m.put("userId", userId);
+        
+        JobDataMap jobDataMap = new JobDataMap();
+        jobDataMap.put("jobArg", "world");
+        jobDataMap.putAll(m);
+        
+        JobDetail jobDetail = scheduler.getJobDetail(JobKey.jobKey("demo-job"));
+        jobDetail.getJobBuilder().setJobData(jobDataMap);
+        
+        scheduler.resumeJob(jobDetail.getKey());
+        
+//        scheduler.resumeJob(JobKey.jobKey("demo-job"));
+        
         return ResultGenerator.genSuccessResult();
     }
     

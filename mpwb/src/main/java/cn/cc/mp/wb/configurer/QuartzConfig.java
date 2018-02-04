@@ -14,20 +14,38 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.scheduling.quartz.SpringBeanJobFactory;
+import org.springframework.transaction.PlatformTransactionManager;
+
+import javax.sql.DataSource;
 
 @Configuration
 public class QuartzConfig {
 
     public static final String QUARTZ_PROPERTIES_PATH = "/quartz.properties";
 
+    
     @Bean
+    public SchedulerFactoryBean schedulerFactoryBean(JobFactory jobFactory, DataSource dataSource, PlatformTransactionManager transactionManager) throws IOException {
+        SchedulerFactoryBean factory = new SchedulerFactoryBean();
+        factory.setAutoStartup(true);
+        factory.setJobFactory(jobFactory);
+        factory.setQuartzProperties(quartzProperties());
+        
+        //jdbc store
+        factory.setDataSource(dataSource);
+        factory.setTransactionManager(transactionManager);
+        return factory;
+    }
+    
+    
+    /*@Bean
     public SchedulerFactoryBean schedulerFactoryBean(JobFactory jobFactory) throws IOException {
         SchedulerFactoryBean factory = new SchedulerFactoryBean();
         factory.setAutoStartup(true);
         factory.setJobFactory(jobFactory);
         factory.setQuartzProperties(quartzProperties());
         return factory;
-    }
+    }*/
     
     @Bean
     public JobFactory jobFactory(ApplicationContext applicationContext) {

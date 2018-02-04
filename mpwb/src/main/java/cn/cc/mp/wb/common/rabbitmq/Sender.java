@@ -1,4 +1,4 @@
-package cn.cc.mp.wb.common.rabbitmq;
+/*package cn.cc.mp.wb.common.rabbitmq;
 
 import java.util.UUID;
 
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSON;
 
-@Component
+//@Component
 public class Sender implements RabbitTemplate.ConfirmCallback, ReturnCallback {
     
     @Autowired
@@ -69,3 +69,4 @@ public class Sender implements RabbitTemplate.ConfirmCallback, ReturnCallback {
         System.out.println("消费者响应 : " + response + " 消息处理完成");
     }
 }
+*/
