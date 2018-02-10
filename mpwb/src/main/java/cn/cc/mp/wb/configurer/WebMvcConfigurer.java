@@ -7,7 +7,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.ByteArrayHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.ResourceHttpMessageConverter;
+import org.springframework.http.converter.ResourceRegionHttpMessageConverter;
+import org.springframework.http.converter.protobuf.ProtobufHttpMessageConverter;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -27,9 +31,10 @@ import cn.cc.mp.wb.common.interceptor.TokenInterceptor;
 public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     final static Logger logger = LoggerFactory.getLogger(WebMvcConfigurer.class);
     
-    //使用阿里 FastJson 作为JSON MessageConverter
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        
+        //使用阿里 FastJson 作为JSON MessageConverter
         FastJsonHttpMessageConverter converter = new FastJsonHttpMessageConverter();
         FastJsonConfig config = new FastJsonConfig();
         config.setSerializerFeatures(SerializerFeature.WriteMapNullValue,//保留空的字段
@@ -37,8 +42,24 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
                 SerializerFeature.WriteNullNumberAsZero);//Number null -> 0
         converter.setFastJsonConfig(config);
         converter.setDefaultCharset(Charset.forName("UTF-8"));
+        
+        converters.add(new ResourceHttpMessageConverter());
         converters.add(converter);
     }
+    
+    /*@Override
+    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+      //使用阿里 FastJson 作为JSON MessageConverter
+        FastJsonHttpMessageConverter converter = new FastJsonHttpMessageConverter();
+        FastJsonConfig config = new FastJsonConfig();
+        config.setSerializerFeatures(SerializerFeature.WriteMapNullValue,//保留空的字段
+                SerializerFeature.WriteNullStringAsEmpty,//String null -> ""
+                SerializerFeature.WriteNullNumberAsZero);//Number null -> 0
+        converter.setFastJsonConfig(config);
+        converter.setDefaultCharset(Charset.forName("UTF-8"));
+        
+        converters.add(converter);
+    }*/
 
     @Bean
     public ExceptionHandler exceptionHandler() {

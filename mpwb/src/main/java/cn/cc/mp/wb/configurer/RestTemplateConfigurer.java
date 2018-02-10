@@ -96,7 +96,7 @@ public class RestTemplateConfigurer {
         restTemplate.setRequestFactory(clientFactory());
         restTemplate.setErrorHandler(new DefaultResponseErrorHandler());
         
-        logger.info("RestTemplate inited success!");
+        logger.info("===>RestTemplate inited success!");
         return restTemplate;
     }
     

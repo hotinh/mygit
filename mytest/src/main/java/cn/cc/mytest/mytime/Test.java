@@ -22,7 +22,6 @@ public class Test {
 		
 		LocalDateTime dateTime = LocalDateTime.now();
 		
-		
 	}
 
 }

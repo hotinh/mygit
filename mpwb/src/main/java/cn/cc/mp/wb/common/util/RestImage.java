@@ -11,8 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
 public class RestImage {
-
-    
     
     public static void main(String[] args) throws Exception {
         long start = System.currentTimeMillis();
