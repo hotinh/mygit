@@ -28,6 +28,17 @@ import java.util.UUID;
  */
 public class StreamUtilExample {
 
+    public static void main(String[] args) {
+        StreamUtilExample example = new StreamUtilExample();
+
+        example.useStreamFilter();
+        example.useStreamMap();
+        example.useStreamMatch();
+        example.useStreamCount();
+        example.useStreamReduce();
+        example.useParallelStreams();
+    }
+
     private List<String> stringList = new ArrayList<>();
 
     public StreamUtilExample() {
@@ -185,14 +196,4 @@ public class StreamUtilExample {
         // 从输出可以看出：并行排序快了一倍多
     }
 
-    public static void main(String[] args) {
-        StreamUtilExample example = new StreamUtilExample();
-
-        example.useStreamFilter();
-        example.useStreamMap();
-        example.useStreamMatch();
-        example.useStreamCount();
-        example.useStreamReduce();
-        example.useParallelStreams();
-    }
 }
