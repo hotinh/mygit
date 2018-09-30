@@ -6,6 +6,12 @@
   <groupId>cn.cc.demo</groupId>
   <artifactId>mydemo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <modules>
+    <module>effectivejava</module>
+  </modules>
   <packaging>pom</packaging>
+
+
+
   
 </project>
