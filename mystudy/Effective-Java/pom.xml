@@ -2,16 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mystudy</artifactId>
+        <groupId>com.cc.study</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cc.study</groupId>
-    <artifactId>mystudy</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>Thinking-in-Java</module>
-        <module>Effective-Java</module>
-    </modules>
-    <packaging>pom</packaging>
+    <artifactId>Effective-Java</artifactId>
 
-    
+
 </project>
