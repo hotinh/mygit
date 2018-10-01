@@ -23,7 +23,8 @@ public class UserClientImpl extends AbstractClient implements UserClient {
     
     @Value("${test.url}")
     private String url;
-    
+
+    @Override
     public String add(User user) {
         url = url + USER;
         logger.info("url:{}", url);
@@ -43,7 +44,8 @@ public class UserClientImpl extends AbstractClient implements UserClient {
         logger.info("result:{}", result);
         return result.getBody();
     }
-    
+
+    @Override
     public String del(User user) {
         url = USER + "/{id}";
         logger.info("url:{}", url);
@@ -63,7 +65,8 @@ public class UserClientImpl extends AbstractClient implements UserClient {
         logger.info("result:{}", result);
         return result.getBody();
     }
-    
+
+    @Override
     public String update(User user) {
         url = USER;
         logger.info("url:{}", url);
@@ -83,7 +86,8 @@ public class UserClientImpl extends AbstractClient implements UserClient {
         logger.info("result:{}", result);
         return result.getBody();
     }
-    
+
+    @Override
     public String list(User user) {
         url = USER;
         logger.info("url:{}", url);
@@ -103,7 +107,8 @@ public class UserClientImpl extends AbstractClient implements UserClient {
         logger.info("result:{}", result);
         return result.getBody();
     }
-    
+
+    @Override
     public String detail(User user) {
         url = USER + "/{id}";
         logger.info("url:{}", url);

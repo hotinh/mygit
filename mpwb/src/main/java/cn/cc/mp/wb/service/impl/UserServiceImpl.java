@@ -12,6 +12,7 @@ import javax.annotation.Resource;
 
 /**
  * Created by CodeGenerator on 2017/12/24.
+ * @author Administrator
  */
 @Service
 @Transactional
@@ -19,6 +20,7 @@ public class UserServiceImpl extends AbstractService<User> implements UserServic
     @Resource
     private UserMapper userMapper;
 
+    @Override
     public String saveOne(User user) {
         userMapper.insertSelective(user);
         return user.getId().toString();

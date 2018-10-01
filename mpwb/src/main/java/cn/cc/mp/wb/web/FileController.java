@@ -37,8 +37,10 @@ public class FileController {
 
     @PostMapping("/upload/1")
     public void upload1(@RequestParam("file") MultipartFile file, HttpServletResponse response, HttpServletRequest request) {
-        if (file.isEmpty())
+        if (file.isEmpty()) {
             return;
+        }
+
         
         String contentType = file.getContentType();
         System.out.println(contentType);

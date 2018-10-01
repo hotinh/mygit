@@ -113,10 +113,10 @@ public class ZipUtil {
                    }catch(Exception e) {
                        throw new RuntimeException(e);
                    }finally {
-                       if(is != null)
+                       if (is != null) {
                            is.close();
+                       }
                    }
-                    
                }
            }
            zaos.finish();
